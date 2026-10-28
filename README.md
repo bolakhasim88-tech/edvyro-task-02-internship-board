@@ -45,15 +45,13 @@ Responsive-Internship-Board/
 
 [Open Internship Board](https://bolakhasim88-tech.github.io/edvyro-task-02-internship-board/)
 
-## 📸 Screenshots
+## Screenshots
 
 ### Desktop View
-
-![Desktop Screenshot](screenshots/desktop.png)
+![Desktop Screenshot](desktop.png)
 
 ### Mobile View
-
-![Mobile Screenshot](screenshots/mobile.png)
+![Mobile Screenshot](mobile.png)
 
 ## 📚 Learning Outcomes
 
