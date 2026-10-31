@@ -35,6 +35,7 @@ Task-4-Secure-Application-Integration/
 │   ├── controllers/
 │   ├── db.js
 │   └── server.js
+├── .gitignore
 ├── README.md
 ├── SECURITY-CHECKLIST.md
 └── TEST-REPORT.md
