@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Explore internship opportunities across web development, AI, data science, and more.">
+
+    <title>Internship Board | EdVyro Task 2</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-content">
+
+            <a href="#" class="logo" aria-label="Internship Board Home">
+                Intern<span>Board</span>
+            </a>
+
+            <nav aria-label="Main navigation">
+                <a href="#internships">Internships</a>
+                <a href="#about">About</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+
+                <p class="hero-label">FIND YOUR OPPORTUNITY</p>
+
+                <h1>
+                    Start Your Career<br>
+                    With the Right Internship
+                </h1>
+
+                <p class="hero-description">
+                    Discover exciting internship opportunities,
+                    build real-world skills, and take the first step
+                    toward your dream career.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- Internship Board -->
+        <section class="internship-section" id="internships">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="section-label">EXPLORE OPPORTUNITIES</p>
+                        <h2>Latest Internships</h2>
+                    </div>
+
+                    <p id="results-count" aria-live="polite">
+                        Loading internships...
+                    </p>
+                </div>
+
+
+                <!-- Search and Filter -->
+                <form class="filter-form" id="filter-form">
+
+                    <div class="search-group">
+
+                        <label for="search-input">
+                            Search internships
+                        </label>
+
+                        <input
+                            type="search"
+                            id="search-input"
+                            name="search"
+                            placeholder="Search by title or company..."
+                        >
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <label for="domain-filter">
+                            Select domain
+                        </label>
+
+                        <select id="domain-filter" name="domain">
+
+                            <option value="all">
+                                All Domains
+                            </option>
+
+                            <option value="Web Development">
+                                Web Development
+                            </option>
+
+                            <option value="Artificial Intelligence">
+                                Artificial Intelligence
+                            </option>
+
+                            <option value="Data Science">
+                                Data Science
+                            </option>
+
+                            <option value="UI/UX Design">
+                                UI/UX Design
+                            </option>
+
+                            <option value="Cybersecurity">
+                                Cybersecurity
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button type="button" id="reset-button">
+                        Reset Filters
+                    </button>
+
+                </form>
+
+
+                <!-- Internship Cards -->
+                <div
+                    class="internship-grid"
+                    id="internship-list"
+                    aria-live="polite"
+                >
+                    <!-- JavaScript will render internship cards here -->
+                </div>
+
+
+                <!-- Empty State -->
+                <div
+                    class="empty-state"
+                    id="empty-state"
+                    hidden
+                >
+                    <h3>No internships found</h3>
+
+                    <p>
+                        Try changing your search or selecting another domain.
+                    </p>
+
+                </div>
+
+
+                <!-- Error State -->
+                <div
+                    class="error-state"
+                    id="error-state"
+                    role="alert"
+                    hidden
+                >
+                    <h3>Something went wrong</h3>
+
+                    <p>
+                        We couldn't load the internships.
+                        Please try again.
+                    </p>
+
+                    <button type="button" id="retry-button">
+                        Try Again
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Internship Application Form -->
+<section class="application-section" id="application" hidden>
+
+    <div class="container">
+
+        <div class="application-heading">
+            <p class="section-label">TAKE THE NEXT STEP</p>
+            <h2>Apply for Internship</h2>
+            <p id="selected-internship">
+                Complete the form to apply.
+            </p>
+        </div>
+
+        <form id="application-form" class="application-form">
+
+            <input
+                type="hidden"
+                id="application-internship-id"
+                name="internshipId"
+            >
+
+            <div class="form-group">
+                <label for="applicant-name">Full Name</label>
+                <input
+                    type="text"
+                    id="applicant-name"
+                    name="name"
+                    required
+                    minlength="2"
+                    maxlength="100"
+                    autocomplete="name"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="applicant-email">Email Address</label>
+                <input
+                    type="email"
+                    id="applicant-email"
+                    name="email"
+                    required
+                    maxlength="150"
+                    autocomplete="email"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="applicant-phone">Phone Number</label>
+                <input
+                    type="tel"
+                    id="applicant-phone"
+                    name="phone"
+                    required
+                    pattern="[0-9]{10}"
+                    maxlength="10"
+                    minlength="10"
+                    placeholder="10-digit mobile number"
+                    autocomplete="tel"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="applicant-resume">Resume URL</label>
+                <input
+                    type="url"
+                    id="applicant-resume"
+                    name="resume"
+                    required
+                    maxlength="500"
+                    placeholder="https://example.com/resume.pdf"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="applicant-cover-letter">
+                    Cover Letter
+                </label>
+                <textarea
+                    id="applicant-cover-letter"
+                    name="coverLetter"
+                    required
+                    minlength="20"
+                    maxlength="2000"
+                    rows="5"
+                    placeholder="Tell us why you are interested..."
+                ></textarea>
+            </div>
+
+            <p
+                id="application-message"
+                aria-live="polite"
+            ></p>
+
+            <button type="submit" id="application-submit">
+                Submit Application
+            </button>
+
+            <button type="button" id="application-cancel">
+                Cancel
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+
+            <div class="container">
+
+                <h2>Build Your Future</h2>
+
+                <p>
+                    Find opportunities that help you learn,
+                    grow, and gain practical experience.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <p>
+                © 2026 InternBoard.
+                Built for the EdVyro Full Stack Development Internship.
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

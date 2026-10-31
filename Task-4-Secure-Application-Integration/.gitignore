@@ -1,0 +1,21 @@
+
+node_modules/
+**/node_modules/
+
+.env
+.env.*
+!.env.example
+
+*.log
+
+dist/
+build/
+
+# SQLite database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Operating system files
+.DS_Store
+Thumbs.db
